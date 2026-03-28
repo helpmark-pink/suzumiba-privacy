@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>プライバシーポリシー | すずみば</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;600;700&family=Zen+Maru+Gothic:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --sky: #e8f4fd;
+        --water: #0ea5e9;
+        --water-deep: #0284c7;
+        --water-light: #bae6fd;
+        --text: #1e3a5f;
+        --text-sub: #5a7a9a;
+        --white: #ffffff;
+        --card: #f0f8ff;
+        --border: #d0e8f7;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Noto Sans JP", sans-serif;
+        background: var(--sky);
+        color: var(--text);
+        line-height: 1.9;
+        font-size: 15px;
+        min-height: 100vh;
+      }
+
+      /* Header */
+      .header {
+        background: linear-gradient(135deg, var(--water), var(--water-deep));
+        padding: 48px 24px 40px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .header::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(
+          circle at 30% 40%,
+          rgba(255, 255, 255, 0.1) 0%,
+          transparent 60%
+        );
+      }
+
+      .header .app-name {
+        font-family: "Zen Maru Gothic", sans-serif;
+        font-size: 28px;
+        font-weight: 700;
+        color: var(--white);
+        letter-spacing: 0.1em;
+        position: relative;
+      }
+
+      .header .app-name .drop {
+        display: inline-block;
+        font-size: 32px;
+        margin-right: 4px;
+        animation: drip 3s ease-in-out infinite;
+      }
+
+      @keyframes drip {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-4px);
+        }
+      }
+
+      .header h1 {
+        font-size: 18px;
+        font-weight: 400;
+        color: rgba(255, 255, 255, 0.9);
+        margin-top: 8px;
+        position: relative;
+      }
+
+      .header .nav-links {
+        margin-top: 20px;
+        position: relative;
+      }
+
+      .header .nav-links a {
+        color: rgba(255, 255, 255, 0.85);
+        text-decoration: none;
+        font-size: 13px;
+        margin: 0 12px;
+        padding: 6px 16px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 20px;
+        transition: all 0.3s;
+      }
+
+      .header .nav-links a:hover,
+      .header .nav-links a.active {
+        background: rgba(255, 255, 255, 0.2);
+        border-color: rgba(255, 255, 255, 0.6);
+        color: var(--white);
+      }
+
+      /* Main */
+      .main {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 32px 20px 60px;
+      }
+
+      .update-date {
+        text-align: right;
+        font-size: 13px;
+        color: var(--text-sub);
+        margin-bottom: 24px;
+      }
+
+      .section {
+        background: var(--white);
+        border-radius: 16px;
+        padding: 28px 28px;
+        margin-bottom: 20px;
+        border: 1px solid var(--border);
+        box-shadow: 0 2px 12px rgba(14, 165, 233, 0.06);
+      }
+
+      .section h2 {
+        font-family: "Zen Maru Gothic", sans-serif;
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--water-deep);
+        margin-bottom: 14px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid var(--water-light);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .section h2 .icon {
+        font-size: 20px;
+      }
+
+      .section p {
+        margin-bottom: 12px;
+        font-weight: 300;
+      }
+
+      .section ul {
+        margin: 8px 0 12px 20px;
+        font-weight: 300;
+      }
+
+      .section ul li {
+        margin-bottom: 6px;
+      }
+
+      .section ul li::marker {
+        color: var(--water);
+      }
+
+      /* Footer */
+      .footer {
+        text-align: center;
+        padding: 32px 20px 40px;
+        font-size: 12px;
+        color: var(--text-sub);
+      }
+
+      .footer a {
+        color: var(--water);
+        text-decoration: none;
+      }
+
+      .footer .dev-name {
+        margin-top: 8px;
+        font-weight: 600;
+        color: var(--text);
+      }
+
+      @media (max-width: 480px) {
+        .header {
+          padding: 36px 16px 32px;
+        }
+        .header .app-name {
+          font-size: 24px;
+        }
+        .section {
+          padding: 20px 18px;
+        }
+        .main {
+          padding: 24px 14px 48px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div class="app-name"><span class="drop">💧</span>すずみば</div>
+      <h1>プライバシーポリシー</h1>
+      <div class="nav-links">
+        <a href="privacy.html" class="active">プライバシーポリシー</a>
+        <a href="support.html">サポート</a>
+      </div>
+    </div>
+
+    <div class="main">
+      <p class="update-date">最終更新日：2026年3月29日</p>
+
+      <div class="section">
+        <h2><span class="icon">📱</span>はじめに</h2>
+        <p>
+          「すずみば」（以下「本アプリ」）は、個人開発者 Yukari
+          Morimoto（以下「開発者」）が提供する、全国のクーリングシェルター（指定暑熱避難施設）を地図上で検索できるiOSアプリです。
+        </p>
+        <p>
+          本プライバシーポリシーは、本アプリにおける利用者の情報の取り扱いについて説明するものです。
+        </p>
+      </div>
+
+      <div class="section">
+        <h2><span class="icon">📍</span>取得する情報</h2>
+        <p>本アプリでは、以下の情報を取得します。</p>
+        <ul>
+          <li>
+            <strong>位置情報</strong
+            >：現在地周辺のクーリングシェルターを表示するため、および現在地の都道府県に基づく暑さ指数（WBGT）を取得するために使用します。
+          </li>
+        </ul>
+        <p>位置情報は端末内でのみ処理され、外部サーバーには送信されません。</p>
+      </div>
+
+      <div class="section">
+        <h2><span class="icon">🔒</span>情報の利用目的</h2>
+        <p>取得した位置情報は、以下の目的にのみ使用します。</p>
+        <ul>
+          <li>現在地から最寄りのクーリングシェルターを表示するため</li>
+          <li>施設までの距離・徒歩時間を計算するため</li>
+          <li>現在地の都道府県の熱中症警戒情報を表示するため</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2><span class="icon">🚫</span>第三者への提供</h2>
+        <p>
+          本アプリは、利用者の個人情報を第三者に提供、販売、共有することはありません。
+        </p>
+      </div>
+
+      <div class="section">
+        <h2><span class="icon">💾</span>データの保存</h2>
+        <p>本アプリは以下のデータを端末内（UserDefaults）にのみ保存します。</p>
+        <ul>
+          <li>お気に入りに登録した施設の情報</li>
+        </ul>
+        <p>
+          これらのデータは外部サーバーには送信されず、アプリを削除すると消去されます。
+        </p>
+      </div>
+
+      <div class="section">
+        <h2><span class="icon">🌐</span>外部サービスとの通信</h2>
+        <p>
+          本アプリは、熱中症警戒情報を表示するために、環境省が公開する暑さ指数（WBGT）データ（<a
+            href="https://www.wbgt.env.go.jp/"
+            target="_blank"
+            style="color: var(--water)"
+            >https://www.wbgt.env.go.jp/</a
+          >）にアクセスします。この通信にはユーザーの個人情報は含まれません。
+        </p>
+      </div>
+
+      <div class="section">
+        <h2><span class="icon">📊</span>アナリティクス・広告</h2>
+        <p>
+          本アプリは、広告の表示およびアナリティクスツールの使用を行いません。利用者の行動を追跡するトラッキングは一切行いません。
+        </p>
+      </div>
+
+      <div class="section">
+        <h2><span class="icon">👶</span>お子様のプライバシー</h2>
+        <p>
+          本アプリは年齢制限なくどなたでもご利用いただけます。13歳未満のお子様から意図的に個人情報を収集することはありません。
+        </p>
+      </div>
+
+      <div class="section">
+        <h2><span class="icon">📝</span>ポリシーの変更</h2>
+        <p>
+          本プライバシーポリシーは、必要に応じて変更されることがあります。変更があった場合は、本ページにて最新の内容を掲載します。
+        </p>
+      </div>
+
+      <div class="section">
+        <h2><span class="icon">✉️</span>お問い合わせ</h2>
+        <p>
+          本アプリのプライバシーに関するご質問やお問い合わせは、以下よりご連絡ください。
+        </p>
+        <p><strong>開発者：</strong>Yukari Morimoto</p>
+        <p>
+          <strong>X (Twitter)：</strong
+          ><a
+            href="https://x.com/programmer817"
+            target="_blank"
+            style="color: var(--water)"
+            >@programmer817</a
+          >
+        </p>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>&copy; 2026 すずみば. All rights reserved.</p>
+      <p class="dev-name">
+        Developed by
+        <a href="https://x.com/programmer817" target="_blank"
+          >Yukari Morimoto</a
+        >
+      </p>
+    </div>
+  </body>
+</html>

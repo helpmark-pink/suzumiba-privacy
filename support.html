@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>サポート | すずみば</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;600;700&family=Zen+Maru+Gothic:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sky: #E8F4FD;
+    --water: #0EA5E9;
+    --water-deep: #0284C7;
+    --water-light: #BAE6FD;
+    --text: #1E3A5F;
+    --text-sub: #5A7A9A;
+    --white: #FFFFFF;
+    --card: #F0F8FF;
+    --border: #D0E8F7;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background: var(--sky);
+    color: var(--text);
+    line-height: 1.9;
+    font-size: 15px;
+    min-height: 100vh;
+  }
+
+  .header {
+    background: linear-gradient(135deg, var(--water), var(--water-deep));
+    padding: 48px 24px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 40%, rgba(255,255,255,0.1) 0%, transparent 60%);
+  }
+
+  .header .app-name {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: 0.1em;
+    position: relative;
+  }
+
+  .header .app-name .drop {
+    display: inline-block;
+    font-size: 32px;
+    margin-right: 4px;
+    animation: drip 3s ease-in-out infinite;
+  }
+
+  @keyframes drip {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+  }
+
+  .header h1 {
+    font-size: 18px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.9);
+    margin-top: 8px;
+    position: relative;
+  }
+
+  .header .nav-links {
+    margin-top: 20px;
+    position: relative;
+  }
+
+  .header .nav-links a {
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+    font-size: 13px;
+    margin: 0 12px;
+    padding: 6px 16px;
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 20px;
+    transition: all 0.3s;
+  }
+
+  .header .nav-links a:hover,
+  .header .nav-links a.active {
+    background: rgba(255,255,255,0.2);
+    border-color: rgba(255,255,255,0.6);
+    color: var(--white);
+  }
+
+  .main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 32px 20px 60px;
+  }
+
+  .section {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 28px 28px;
+    margin-bottom: 20px;
+    border: 1px solid var(--border);
+    box-shadow: 0 2px 12px rgba(14,165,233,0.06);
+  }
+
+  .section h2 {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--water-deep);
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--water-light);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .section h2 .icon { font-size: 20px; }
+
+  .section p {
+    margin-bottom: 12px;
+    font-weight: 300;
+  }
+
+  .section ul {
+    margin: 8px 0 12px 20px;
+    font-weight: 300;
+  }
+
+  .section ul li {
+    margin-bottom: 6px;
+  }
+
+  .section ul li::marker {
+    color: var(--water);
+  }
+
+  /* Feature cards */
+  .features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin: 16px 0;
+  }
+
+  .feature-card {
+    background: var(--card);
+    border-radius: 12px;
+    padding: 18px 16px;
+    text-align: center;
+    border: 1px solid var(--border);
+  }
+
+  .feature-card .feat-icon {
+    font-size: 28px;
+    margin-bottom: 6px;
+  }
+
+  .feature-card .feat-title {
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--water-deep);
+    margin-bottom: 4px;
+  }
+
+  .feature-card .feat-desc {
+    font-size: 12px;
+    color: var(--text-sub);
+    font-weight: 300;
+    line-height: 1.6;
+  }
+
+  /* FAQ */
+  .faq-item {
+    margin-bottom: 16px;
+  }
+
+  .faq-q {
+    font-weight: 600;
+    color: var(--water-deep);
+    margin-bottom: 4px;
+    font-size: 15px;
+  }
+
+  .faq-q::before {
+    content: 'Q. ';
+    color: var(--water);
+    font-weight: 700;
+  }
+
+  .faq-a {
+    font-weight: 300;
+    padding-left: 24px;
+    position: relative;
+  }
+
+  .faq-a::before {
+    content: 'A.';
+    position: absolute;
+    left: 0;
+    color: var(--water);
+    font-weight: 700;
+  }
+
+  /* Contact button */
+  .contact-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, var(--water), var(--water-deep));
+    color: var(--white);
+    text-decoration: none;
+    padding: 14px 32px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 15px;
+    transition: all 0.3s;
+    box-shadow: 0 4px 16px rgba(14,165,233,0.3);
+  }
+
+  .contact-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(14,165,233,0.4);
+  }
+
+  .contact-btn svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+  }
+
+  .footer {
+    text-align: center;
+    padding: 32px 20px 40px;
+    font-size: 12px;
+    color: var(--text-sub);
+  }
+
+  .footer a {
+    color: var(--water);
+    text-decoration: none;
+  }
+
+  .footer .dev-name {
+    margin-top: 8px;
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  @media (max-width: 480px) {
+    .header { padding: 36px 16px 32px; }
+    .header .app-name { font-size: 24px; }
+    .section { padding: 20px 18px; }
+    .main { padding: 24px 14px 48px; }
+    .features { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="app-name"><span class="drop">💧</span>すずみば</div>
+  <h1>サポートページ</h1>
+  <div class="nav-links">
+    <a href="privacy.html">プライバシーポリシー</a>
+    <a href="support.html" class="active">サポート</a>
+  </div>
+</div>
+
+<div class="main">
+
+  <div class="section">
+    <h2><span class="icon">💧</span>すずみばについて</h2>
+    <p>「すずみば」は、全国のクーリングシェルター（指定暑熱避難施設）を地図から簡単に探せるiOSアプリです。猛暑の中で涼める場所をすぐに見つけて、熱中症から身を守りましょう。</p>
+
+    <div class="features">
+      <div class="feature-card">
+        <div class="feat-icon">🗺️</div>
+        <div class="feat-title">マップ検索</div>
+        <div class="feat-desc">現在地周辺のシェルターを地図上にピンで表示</div>
+      </div>
+      <div class="feature-card">
+        <div class="feat-icon">🏛️</div>
+        <div class="feat-desc feat-title">全国1,000施設</div>
+        <div class="feat-desc">47都道府県のシェルターを収録</div>
+      </div>
+      <div class="feature-card">
+        <div class="feat-icon">🌡️</div>
+        <div class="feat-title">熱中症アラート</div>
+        <div class="feat-desc">環境省の暑さ指数を自動取得して警戒レベルを表示</div>
+      </div>
+      <div class="feature-card">
+        <div class="feat-icon">🚶</div>
+        <div class="feat-title">ナビ連携</div>
+        <div class="feat-desc">Apple Mapsで徒歩ルートをすぐに案内</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2><span class="icon">❓</span>よくある質問</h2>
+
+    <div class="faq-item">
+      <div class="faq-q">位置情報の利用許可を求められますが、なぜ必要ですか？</div>
+      <div class="faq-a">現在地周辺のシェルターを表示し、距離や徒歩時間を計算するために必要です。位置情報は端末内でのみ処理され、外部には送信されません。</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">熱中症アラートが表示されません</div>
+      <div class="faq-a">環境省の暑さ指数（WBGT）データは毎年4月下旬〜10月頃の期間に配信されます。この期間外はアラートが表示されない仕様です。</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">シェルターの情報が実際と異なります</div>
+      <div class="faq-a">開放期間や時間は自治体ごとに異なり、変更される場合があります。最新情報は各自治体のウェブサイトでご確認ください。</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">自分の地域のシェルターが登録されていません</div>
+      <div class="faq-a">現在は主要な施設を中心に収録しています。掲載リクエストは下記のお問い合わせよりお寄せください。今後のアップデートで順次追加してまいります。</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">オフラインで使えますか？</div>
+      <div class="faq-a">シェルターデータはアプリ内に保存されているため、地図の表示にはインターネット接続が必要ですが、施設の一覧表示はオフラインでも可能です。</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">料金はかかりますか？</div>
+      <div class="faq-a">完全無料です。広告の表示やアプリ内課金もありません。</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2><span class="icon">📱</span>動作環境</h2>
+    <ul>
+      <li>iOS 17.0 以降</li>
+      <li>iPhone 対応</li>
+      <li>位置情報サービスの利用を推奨</li>
+    </ul>
+  </div>
+
+  <div class="section" style="text-align: center;">
+    <h2><span class="icon">✉️</span>お問い合わせ</h2>
+    <p>不具合の報告、ご要望、シェルターの掲載リクエストなど、<br>お気軽にご連絡ください。</p>
+    <p style="margin-top: 20px;">
+      <a class="contact-btn" href="https://x.com/programmer817" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        @programmer817 に連絡する
+      </a>
+    </p>
+    <p style="margin-top: 16px; font-size: 13px; color: var(--text-sub);">開発者：Yukari Morimoto</p>
+  </div>
+
+</div>
+
+<div class="footer">
+  <p>&copy; 2026 すずみば. All rights reserved.</p>
+  <p class="dev-name">Developed by <a href="https://x.com/programmer817" target="_blank">Yukari Morimoto</a></p>
+</div>
+
+</body>
+</html>
